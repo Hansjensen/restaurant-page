@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    color: rgb(244, 242, 235);
+    font-size: 16px
+}
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(cove-view.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(15, 15, 15);
+    height: 12%;
+    
+}
+
+.logo {
+    margin-left: 5%;
+}
+
+.nav-bar {
+    width: 30%;
+    margin-right: 5%;
+    height: 100%;
+}
+
+.nav-bar > ul {
+    list-style: none;
+}
+
+.link {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    height: 35%;
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 3%;
+
+   
+}
+
+.link:hover {
+    background-color: rgb(222, 130, 10);
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 10px 10px 0 10px;
+    
+}
+
+.active {
+    text-decoration: double;
+
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    
+}
+
+.webpack {
+    background-image: url(cove-view.png);
+}
+
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social {
+    margin-left: 5%;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about {
+    
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    font-weight: bolder;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    margin-right: 5%;
+}
