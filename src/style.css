@@ -25,6 +25,7 @@ header {
     width: 100%;
     background-color: rgb(15, 15, 15);
     height: 12%;
+    box-shadow: 0px 1px 10px rgb(222, 130, 10);
     
 }
 
@@ -89,6 +90,7 @@ header {
     height: 12%;
     display: flex;
     justify-content: space-evenly;
+    box-shadow: 0px -.5px 3px rgb(222, 130, 10);
 }
 
 .social {
@@ -120,4 +122,38 @@ header {
     height: 100%;
     width: 30%;
     margin-right: 5%;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.homeHero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(222, 130, 10, 0.548);
+    height: 80%;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.homeHero > * {
+    margin: 20px 0px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.homeHeroTitle {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px black;
+    margin: 30px;
+}
+
+.homeHeroP {
+    font-size: 1.3rem;
 }

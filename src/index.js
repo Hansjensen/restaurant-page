@@ -1,13 +1,31 @@
 
-import {elementBuild, head} from './pageload.js'
+import {elementBuild, headerBuild, pageBuild, footerBuild} from './pageload.js'
 import './style.css';
+import { homePage } from './home.js'
 
-
-
-const content = elementBuild('div', {'id': 'content'}, head)
-
-
-
+//Load HomePage and content
+const content = elementBuild('div', {'class': 'content'}, headerBuild(), pageBuild(homePage()), footerBuild())
 document.body.appendChild(content)
+
+
+// add event listener on links and create 
+const pageClicker = document.querySelectorAll('.link');
+pageClicker.forEach( function (elem) {
+    elem.addEventListener('click', (e) => {
+        const tab = e.target.textContent
+        const container = document.querySelector('.page')
+        container.textContent = ''
+        if (tab == "Home") {
+            container.appendChild(homePage())
+        }
+        
+    })
+
+})
+
+console.log(pageClicker)
+
+
+
 
 
