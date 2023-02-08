@@ -2,70 +2,70 @@ import { elementBuild } from "./pageload"
 
 const pizzaMenu = [
     {
-        pizza: 'Hawaiian',
+        item: 'Hawaiian',
         desc: 'Bacon & Pineapple',
         price: '20'
     },
     {
-        pizza:'Veg-O-Matic',
+        item:'Veg-O-Matic',
         desc:'Seasonal Greens, Red Bell Peppers, Onion',
         price: '21'
 
     },
     {
-        pizza:'Meat',
+        item:'Meat',
         desc:'Pepperoni, Sausage & Herbs',
         price: '21'
     },
     {
-        pizza: 'Waimea',
+        item: 'Waimea',
         desc: 'Bacon, Pineapple, & Jalapeno',
         price: '22'
 
     },
     {
-        pizza: 'Vert',
+        item: 'Vert',
         desc: 'Pesto Sauce Base, Spinach, Artichoke Hearts',
         price: '22'
 
     },
     {
-        pizza:'Split Hog',
+        item:'Split Hog',
         desc: '1/2 Bacon, 1/2 Homemade Sausage, & Garlic',
         price: '22'
 
     },
     {
-        pizza: 'Sid Fishes',
+        item: 'Sid Fishes',
         desc: 'Anchovies, Capers & Artichoke Hearts',
         price: '22'
 
     },
     {
-        pizza: "Dog's Bollocks AKA Combo",
+        item: "Dog's Bollocks AKA Combo",
         desc: 'Sausage, Pepperoni, Mushrooms, Olives',
         price: '23'
     },
     {
-        pizza:'The Pearl',
+        item:'The Pearl',
         desc:'Olive Oil Base, Red Onion, Garlic, Kalamatas, Herbs',
         price: '23'
 
     },
     {
-        pizza:'Hildabaum',
+        item:'Hildabaum',
         desc:'Red Sauce, Goat Cheese, Pesto, Red Bells, Olives',
         price: '24'
 
     },
     {
-        pizza:'Greek',
+        item:'Greek',
         desc: 'Feta, Kalamatas, Spinach, & Artichokes',
         price: '24'
 
     },
     {
-        pizza: 'Surf Or Die Trying',
+        item: 'Surf Or Die Trying',
         desc:'Walnuts, Red Onion, Kale, Goat & Pecorino Cheeses',
         price: '24'
 
@@ -110,4 +110,52 @@ const toppings = ['Pepperoni', 'Mushrooms', 'Black Olives', 'Jalapenos', 'Pineap
 const nextLevelToppings = ['Pesto', 'Bacon', 'Sausage', 'Feta Cheese', 'Goat Cheese', 'Pecorino Cheese', 'Sun Dried Tomatoes', 'Roasted Bell Peppers', 'Fresh Summer Tomatoes', 'Artichoke Hearts', 'Kalamata Olives', 'Anchovies', 'Walnuts']
 
 
-function 
+function menuPage (){
+        
+        // update and append menu containers
+        let pizzaContainer = elementBuild('div', {'class': 'pizzaContainer'} )
+        menuBuild(pizzaContainer, pizzaMenu);
+        let sidesContainer = elementBuild('div', {'class': 'sidesContainer'})
+        menuBuild(sidesContainer, otherMenu);
+
+
+        let menuHero = elementBuild('div', {'class': 'menuHero'}, 
+        elementBuild('div', {'class' : 'pizzaTitle' }, elementBuild('h2', {"class" : 'pizzaHeader'}, 'PIZZA')),
+        pizzaContainer,
+        elementBuild('div', {'class' : 'sidesTitle' }, elementBuild('h2', {"class" : 'sidesHeader'}, 'SIDES')),
+        sidesContainer
+        );
+
+        console.log(menuHero )
+       
+        
+        
+        
+
+    return menuHero
+}
+
+function menuBuild(x, menu){
+   
+    for (let i = 0; i < menu.length; i++) {
+        
+        const item = 
+        elementBuild('div', {'class' : 'menuCard'}, 
+            elementBuild('h2', {'class' : 'menuCardTitle'}, menu[i].item),
+            elementBuild('p', {'class' : 'menuCardDesc'}, menu[i].desc), 
+            elementBuild('p', {'class' : 'menuCardPrice'}, '$ ' + menu[i].price)
+        );
+        x.appendChild(item)
+        
+     };
+     
+    return x
+
+}
+
+function sides(x) {
+
+}
+
+
+export {menuPage}

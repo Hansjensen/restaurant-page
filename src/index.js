@@ -2,6 +2,7 @@
 import {elementBuild, headerBuild, pageBuild, footerBuild} from './pageload.js'
 import './style.css';
 import { homePage } from './home.js'
+import {menuPage} from './menu.js'
 
 //Load HomePage and content
 const content = elementBuild('div', {'class': 'content'}, headerBuild(), pageBuild(homePage()), footerBuild())
@@ -17,6 +18,8 @@ pageClicker.forEach( function (elem) {
         container.textContent = ''
         if (tab == "Home") {
             container.appendChild(homePage())
+        } if (tab === "Menu") {
+            container.appendChild(menuPage())
         }
         
     })

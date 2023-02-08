@@ -13,7 +13,7 @@ function elementBuild (type, attributes, ...children) {
     children.forEach(child => {
         if (typeof child === 'string') {
             element.appendChild(document.createTextNode(child))
-        } else {
+        }  else{
             element.appendChild(child)
         }
     })

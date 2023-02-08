@@ -157,3 +157,12 @@ header {
 .homeHeroP {
     font-size: 1.3rem;
 }
+
+.menuHero {
+    background-color: rgba(222, 130, 10, 0.548);
+    height: 80%;
+    width: 80%;
+    border-radius: 5px;
+    
+    overflow: scroll;
+}
