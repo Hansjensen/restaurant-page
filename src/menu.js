@@ -105,7 +105,7 @@ const otherMenu = [
     },
 ]
 
-const toppings = ['Pepperoni', 'Mushrooms', 'Black Olives', 'Jalapenos', 'Pineapple', 'Garlic', 'Basil', 'Kale', 'Herbs', 'Capers', 'Spinach', 'Red Onion']
+const toppingsBasic = ['Pepperoni', 'Mushrooms', 'Black Olives', 'Jalapenos', 'Pineapple', 'Garlic', 'Basil', 'Kale', 'Herbs', 'Capers', 'Spinach', 'Red Onion']
 
 const nextLevelToppings = ['Pesto', 'Bacon', 'Sausage', 'Feta Cheese', 'Goat Cheese', 'Pecorino Cheese', 'Sun Dried Tomatoes', 'Roasted Bell Peppers', 'Fresh Summer Tomatoes', 'Artichoke Hearts', 'Kalamata Olives', 'Anchovies', 'Walnuts']
 
@@ -118,12 +118,29 @@ function menuPage (){
         let sidesContainer = elementBuild('div', {'class': 'sidesContainer'})
         menuBuild(sidesContainer, otherMenu);
 
+        let toppingsCont =  elementBuild('div', {'class': 'topps'}, )
+
 
         let menuHero = elementBuild('div', {'class': 'menuHero'}, 
         elementBuild('div', {'class' : 'pizzaTitle' }, elementBuild('h2', {"class" : 'pizzaHeader'}, 'PIZZA')),
         pizzaContainer,
-        elementBuild('div', {'class' : 'sidesTitle' }, elementBuild('h2', {"class" : 'sidesHeader'}, 'SIDES')),
-        sidesContainer
+        elementBuild('div', {'class' : 'pizzaTitle' }, elementBuild('h2', {"class" : 'sidesHeader'}, 'SIDES')),
+        sidesContainer,
+        elementBuild('div', {'class': 'toppingsHero'},
+            elementBuild('div', {'class': 'buildYourOwn'}, elementBuild('h2', {'class' : 'toppingsHeader'}, 'BUILD YOUR OWN'), elementBuild('div', {'class' : 'toppsCont'}, 
+            elementBuild('p', {'class' : 'buildBuild'}, '16$ MEDIUM PIZZA 14" WITH TOMATO SAUCE AND CHEESE'),
+            elementBuild('p', {'class' : 'buildBuild'}, '12" GLUTTEN FREE CRUST AVAILABLE'),
+            elementBuild('p', {'class' : 'buildBuild'}, 'TOPPINGS $1.75'),
+            elementBuild('p', {'class' : 'buildBuild'}, 'NEXT LEVEL TOPPINGS $2.25'))),
+            elementBuild('div', {'class' : 'toppingsTitle' }, elementBuild('h2', {"class" : 'toppingsHeader'}, 'TOPPINGS'), toppings(toppingsBasic)
+            ),
+            
+            elementBuild('div', {'class' : 'toppingsTitle' }, elementBuild('h2', {'class' : 'toppingsHeader'}, 'NEXT LEVEL TOPPINGS'),toppings(nextLevelToppings)),
+
+            
+            
+        )
+
         );
 
         console.log(menuHero )
@@ -153,7 +170,15 @@ function menuBuild(x, menu){
 
 }
 
-function sides(x) {
+function toppings(x) {
+    let toppingsP = elementBuild('div', {'class' : 'toppsCont'})
+    for (let i = 0; i < x.length; i++) {
+        let toppingsBuild = elementBuild('p', {'class' : 'topps'});
+        toppingsBuild.textContent = x[i]
+        toppingsP.appendChild(toppingsBuild)
+    }
+
+    return toppingsP;
 
 }
 
