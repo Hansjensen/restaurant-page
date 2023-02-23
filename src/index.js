@@ -3,7 +3,7 @@ import {elementBuild, headerBuild, pageBuild, footerBuild} from './pageload.js'
 import './style.css';
 import { homePage } from './home.js'
 import {menuPage} from './menu.js'
-
+import {contactPage} from './contact.js'
 //Load HomePage and content
 const content = elementBuild('div', {'class': 'content'}, headerBuild(), pageBuild(homePage()), footerBuild())
 document.body.appendChild(content)
@@ -17,16 +17,19 @@ pageClicker.forEach( function (elem) {
         const container = document.querySelector('.page')
         container.textContent = ''
         if (tab == "Home") {
-            container.appendChild(homePage())
-        } if (tab === "Menu") {
-            container.appendChild(menuPage())
+            container.appendChild(homePage());
+        } else if (tab === "Menu") {
+            container.appendChild(menuPage());
+        } else if (tab === 'Contact') {
+            container.appendChild(contactPage());
         }
+        
         
     })
 
 })
 
-console.log(pageClicker)
+
 
 
 
