@@ -1,4 +1,4 @@
-import { elementBuild } from "./pageload"
+import {elementBuild} from "./pageload"
 import contactPhoto from './di-scott-ico-pizza-oven.png'
 function contactPage() {
 
@@ -27,6 +27,6 @@ function contactPage() {
     )
     
     return contactHero;
-}
+};
 
 export {contactPage}
