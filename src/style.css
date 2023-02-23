@@ -57,8 +57,10 @@ header {
 
 }
 
+
+
 .link:hover {
-    background-color: rgb(222, 130, 10);
+    background-color: rgb(222, 130, 10, .5);
     color: whitesmoke;
     cursor: pointer;
     border-radius: 10px 10px 0 10px;
@@ -66,9 +68,10 @@ header {
 }
 
 .active {
-   background-color: rgb(222, 130, 10, .5);
+   border-bottom: 1px rgb(222, 130, 10) solid;
     color: whitesmoke;
     border-radius: 10px 10px 0 10px;
+
 }
 
 .links {

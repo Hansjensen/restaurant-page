@@ -121,7 +121,7 @@ function menuPage (){
         let toppingsCont =  elementBuild('div', {'class': 'topps'}, )
 
 
-        let menuHero = elementBuild('div', {'class': 'menuHero'}, 
+        let menuHero = elementBuild('div', {'class': 'menuHero' }, 
         elementBuild('div', {'class' : 'pizzaTitle' }, elementBuild('h2', {"class" : 'pizzaHeader'}, 'PIZZA')),
         pizzaContainer,
         elementBuild('div', {'class' : 'pizzaTitle' }, elementBuild('h2', {"class" : 'sidesHeader'}, 'SIDES')),
