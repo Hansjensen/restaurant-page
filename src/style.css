@@ -55,7 +55,6 @@ header {
     justify-content: center;
     margin-bottom: 3%;
 
-   
 }
 
 .link:hover {
@@ -67,8 +66,9 @@ header {
 }
 
 .active {
-    text-decoration: double;
-
+   background-color: rgb(222, 130, 10, .5);
+    color: whitesmoke;
+    border-radius: 10px 10px 0 10px;
 }
 
 .links {
@@ -285,3 +285,4 @@ header {
     border: none;
     box-shadow: 1px 2px 2px whitesmoke;
 }
+

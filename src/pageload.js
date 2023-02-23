@@ -33,7 +33,7 @@ function headerBuild() {
         return logo
     }
 
-    function navBar(active) {
+    function navBar() {
 
     
         const navBar = elementBuild(
@@ -46,7 +46,7 @@ function headerBuild() {
                 {'class':'links'},
                 elementBuild(
                     'li',
-                    {'class':'link'},
+                    {'class':'link', 'id' : 'Home'},
                     elementBuild(
                         'a',
                         {},
@@ -55,7 +55,7 @@ function headerBuild() {
                 ),
                 elementBuild(
                     'li',
-                    {'class':'link'},
+                    {'class':'link', 'id' : 'Menu'},
                     elementBuild(
                         'a',
                         {},
@@ -64,7 +64,7 @@ function headerBuild() {
                 ),
                 elementBuild(
                     'li',
-                    {'class':'link'},
+                    {'class':'link', 'id' : 'Contact'},
                     elementBuild(
                         'a',
                         {},
@@ -122,7 +122,11 @@ function footerBuild() {
     return footer
 }
 
+function active(x) {
+    const currentActive = document.getElementById(x)
+    currentActive.classList.add('active')
+}
 
 
 
-export { elementBuild, headerBuild, pageBuild, footerBuild}
+export { elementBuild, headerBuild, pageBuild, footerBuild, active}
